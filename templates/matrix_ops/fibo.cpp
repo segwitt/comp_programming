@@ -1,7 +1,8 @@
+/*
 #include <iostream>
 #include <cstring>
 using namespace std;
-
+*/
 #define ll long long
 #define N 2
 const ll mod = 1e9 + 7;
@@ -24,25 +25,17 @@ void matmul(ll mat1[][N] , ll mat2[][N] ) {
 			}
 
 	memcpy(mat1, tmp, sizeof tmp);
-
 	// multiplies the matrix inplace and copies the result to the first matrix
-
 }
 
 
 void matpow(ll mat[][N], ll x) {
-
 	
 	if ( x == 1 ) return ;
 	ll tmp[N][N] = { { 1, 1 }, { 1, 0 } } ;
-
-	// assert( sizeof tmp == sizeof mat );
+	
 	// or replace by the original matrix
-	if ( x & 1 ) {
-		matpow( mat , x - 1 );
-		// tmp[N][N] = { { 1, 1 } , { 1, 0 } };
-
-	}
+	if ( x & 1 ) matpow( mat , x - 1 );
 	else {
 		memcpy(tmp, mat, sizeof tmp);
 		matpow( mat , x / 2 );
@@ -50,16 +43,14 @@ void matpow(ll mat[][N], ll x) {
 
 	matmul(mat, tmp);
 
-
 }
 
 
 
 ll fib(ll x) {
-
+	
 	// fib(0) = 0 , fib(1) = 1
 	if ( x <= 1 ) return 0;
-
 	--x;
 
 	ll mat[][N] = { { 1, 1 } , { 1, 0 } };
@@ -71,12 +62,10 @@ ll fib(ll x) {
 
 	return mat[0][0];
 
-
-
 }
 
 
-
+/*
 
 int main(int argc, char const *argv[])
 {
@@ -90,3 +79,4 @@ int main(int argc, char const *argv[])
 	return 0;
 
 }
+*/
