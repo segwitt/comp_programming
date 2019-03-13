@@ -6,6 +6,21 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+
+/*
+
+Program to sort the Linked List in grps of k
+A good example of LOOPED RECURSION ( loop + recursion )
+
+1->2->3->4->5, k = 3
+
+1->2->1->4->5
+
+Think about this in reversing the list of first k elements and then recursively call on the rest of the LL
+
+*/
+
 class Solution {
 public:
     
@@ -43,6 +58,7 @@ public:
             l++;
         }
         return l < k;
+        // utility fn to check whether list can be reversed or not, if less than k then leave it!
     }
     ListNode* reverseKGroup(ListNode* head, int k) {
         // main code
